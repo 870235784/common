@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
     <property name="LOG_HOME" value="./logs"/>
@@ -7,7 +6,7 @@
         <encoder>
             <!--<pattern>%d %p [%thread] (%file:%line\)- %m%n</pattern>-->
             <pattern>
-                %date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%tid|%thread|%logger:%line|%mdc{client} %msg%n
+                %date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%thread|%logger:%line|%mdc{client} %msg%n
             </pattern>
             <!-- 控制台也要使用UTF-8，不要使用GBK，否则会中文乱码 -->
             <charset>UTF-8</charset>
@@ -17,7 +16,7 @@
         <encoder>
             <!--<pattern>%d %p [%thread] (%file:%line\)- %m%n</pattern>-->
             <pattern>
-                %date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%tid|%thread|%logger:%line|%mdc{client} %msg%n
+                %date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%thread|%logger:%line|%mdc{client} %msg%n
             </pattern>
             <charset>UTF-8</charset>
         </encoder>
@@ -40,10 +39,10 @@
             <maxFileSize>50MB</maxFileSize>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
-        <encoder  class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+        <encoder>
             <!--<layout>-->
             <!--<pattern>%d %p [%thread] (%file:%line\)- %m%n</pattern>-->
-            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%tid|%thread|%logger:%line|%mdc{client} %msg%n</pattern>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%thread|%logger:%line|%mdc{client} %msg%n</pattern>
             <!--</layout>-->
             <charset>UTF-8</charset>
         </encoder>

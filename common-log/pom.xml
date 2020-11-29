@@ -15,10 +15,12 @@
 
     <modules>
         <module>common-log-base</module>
-        <module>common-log-base-jcl-log4j2</module>
-        <module>common-log-base-slf4j-log4j2</module>
+        <module>common-log-jcl-log4j2</module>
+        <module>common-log-slf4j-log4j2</module>
         <module>common-log-test</module>
-        <module>common-log-base-jcl-logback</module>
+        <module>common-log-slf4j-logback</module>
+        <module>common-log-springboot-log4j2</module>
+        <module>common-log-springboot-logback</module>
     </modules>
 
 

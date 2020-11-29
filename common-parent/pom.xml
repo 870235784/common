@@ -60,6 +60,8 @@
         <disruptor.version>3.3.2</disruptor.version>
         <!-- redisson -->
         <redisson.version>3.14.0</redisson.version>
+        <!-- google protobuf -->
+        <protobuf.version>3.7.0</protobuf.version>
 
         <!-- 待用 -->
         <!--<sharding-sphere.version>4.0.0-RC3</sharding-sphere.version>
@@ -248,7 +250,12 @@
                 <version>${netty.version}</version>
             </dependency>
 
-
+            <!-- protobuf -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
 
 
 
