@@ -1,0 +1,15 @@
+#集群配置
+spring:
+  redis:
+    mode: cluster
+    cluster:
+      nodes: 172.16.19.26:6379
+      password: ai123456
+      scan-interval: 1000
+      read-mode: SLAVE
+      retry-attempts: 3
+      failed-attempts: 3
+      slave-connection-pool-size: 64
+      master-connection-pool-size: 64
+      retry-interval: 2000
+

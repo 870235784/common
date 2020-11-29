@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+    <property name="LOG_HOME" value="./logs"/>
+    <!--<conversionRule conversionWord="msg" converterClass="com.hfepay.common.log.config.SensitiveDataConverter"> </conversionRule>-->
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%d %p [%thread] (%file:%line\)- %m%n</pattern>-->
+            <pattern>
+                %date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%tid|%thread|%logger:%line|%mdc{client} %msg%n
+            </pattern>
+            <!-- 控制台也要使用UTF-8，不要使用GBK，否则会中文乱码 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <appender name="infoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <!--<pattern>%d %p [%thread] (%file:%line\)- %m%n</pattern>-->
+            <pattern>
+                %date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%tid|%thread|%logger:%line|%mdc{client} %msg%n
+            </pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--路径-->
+            <fileNamePattern>${LOG_HOME}/%d-%i.log</fileNamePattern>
+            <!-- 配置日志文件不能超过2M，若超过2M，日志文件会以索引0开始，命名日志文件，例如info.2018-12-21-0.log -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>500MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!--日志文件保留天数-->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+    <appender name="errorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/%d{yyyy-MM}/error.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>50MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder  class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <!--<layout>-->
+            <!--<pattern>%d %p [%thread] (%file:%line\)- %m%n</pattern>-->
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%tid|%thread|%logger:%line|%mdc{client} %msg%n</pattern>
+            <!--</layout>-->
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+    <!--nacos 心跳 INFO 屏蔽-->
+    <logger name="com.alibaba.nacos" level="OFF">
+        <appender-ref ref="errorLog"/>
+    </logger>
+    <root level="info">
+        <appender-ref ref="consoleLog" />
+        <appender-ref ref="infoLog" />
+        <appender-ref ref="errorLog" />
+    </root>
+</configuration>

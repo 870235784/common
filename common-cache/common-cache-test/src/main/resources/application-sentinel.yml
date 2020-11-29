@@ -1,0 +1,10 @@
+#哨兵配置
+spring:
+  redis:
+    mode: sentinel
+    sentinel:
+      master: master
+      nodes: 172.16.19.26:6379
+      password: ai123456
+      master-onlyWrite: true
+      fail-max: 3
