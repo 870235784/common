@@ -1,26 +1,32 @@
-1.spring-boot-starter-web默认使用spring-boot-starter-logging (jcl集成logback)
-2.配置不同包下的日志级别(默认会以当前配置文件log4j2.xml为准, 也可以直接通过修改application.yml文件修改配置)
+#### 1.spring-boot-starter-web默认使用spring-boot-starter-logging (jcl集成logback)
+******
+
+#### 2.配置不同包下的日志级别(默认会以当前配置文件log4j2.xml为准, 也可以直接通过修改application.yml文件修改配置)
+    
     logging:
         level:
             root: INFO
             org.springframework: ERROR
-            
-3.使用当前包时需要将spring-boot-starter-logging排除
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-    <exclusions>
-        <exclusion>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-        </exclusion>
-    </exclusions>
-</dependency>
+******
+      
+#### 3.使用当前包时需要将spring-boot-starter-logging排除
 
-4.不能同时引入common-log-springboot-log4j2 和 common-log-springboot-logback, 否则启动会报错 stackoverflow
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <exclusions>
+            <exclusion>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+******
+
+#### 4.不能同时引入common-log-springboot-log4j2 和 common-log-springboot-logback, 否则启动会报错 stackoverflow
     1.参见: 
-        https://www.jianshu.com/p/191a95ad0b89
-        http://www.slf4j.org/codes.html#multiple_bindings [官方]
+        [简书](https://www.jianshu.com/p/191a95ad0b89)
+        [slf4j官网](http://www.slf4j.org/codes.html#multiple_bindings)
     2.slf4j多绑定问题
         SLF4J: Found binding in [jar:file:/E:/java_install/apache-maven-repository/org/apache/logging/log4j/log4j-slf4j-impl/2.11.2/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
         SLF4J: Found binding in [jar:file:/E:/java_install/apache-maven-repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]

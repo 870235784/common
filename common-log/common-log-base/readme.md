@@ -1,7 +1,7 @@
-1.具体的日志实现框架
+#### 1.具体的日志实现框架
     log4j log4j2 logback ...
 
-2.JCL (Jakarta commons logging)
+#### 2.JCL (Jakarta commons logging)
     2.1 简介
         Jakarta Commons Logging (JCL)提供的是一个日志接口,
         同时兼顾轻量级和不依赖于具体的日志实现工具。它提供给中间件/日志工具开发者一个简单的日志操作抽象, 允许程序开发人员
@@ -32,7 +32,7 @@
                 <version>2.3</version>
             </dependency>
         
-3.slf4j
+#### 3.slf4j
     3.1 简介
         slf4j跟JCL类似, 也是提供了一个日志接口, slf4j只做两件事:
             1.提供日志接口
