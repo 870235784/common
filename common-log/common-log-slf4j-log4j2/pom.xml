@@ -12,6 +12,11 @@
     <artifactId>common-log-base-slf4j-log4j2</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>tca</groupId>
+            <artifactId>common-log-base</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <!-- log4j2 -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

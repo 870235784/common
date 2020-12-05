@@ -39,4 +39,7 @@
             2.提供获取具体日志对象的方法
     3.2 jcl-over-slf4j
         当jar同时依赖了jcl日志体系和slf4j日志体系时, 需要引入jcl-over-slf4j, 将jcl体系适配到slf4j体系
+        
+
+    
   

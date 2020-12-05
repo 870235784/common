@@ -1,7 +1,7 @@
-<configuration>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
     <property name="LOG_HOME" value="./logs"/>
-    <!--<conversionRule conversionWord="msg" converterClass="com.hfepay.common.log.config.SensitiveDataConverter"> </conversionRule>-->
+    <conversionRule conversionWord="msg" converterClass="com.tca.common.log.slf4j.logback.config.SensitiveDataConverter"> </conversionRule>
     <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <!--<pattern>%d %p [%thread] (%file:%line\)- %m%n</pattern>-->
@@ -13,8 +13,8 @@
         </encoder>
     </appender>
     <appender name="infoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/catlina.log</file>
         <encoder>
-            <!--<pattern>%d %p [%thread] (%file:%line\)- %m%n</pattern>-->
             <pattern>
                 %date{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%thread|%logger:%line|%mdc{client} %msg%n
             </pattern>

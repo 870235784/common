@@ -13,12 +13,12 @@
         <!--这个输出控制台的配置-->
         <console name="consoleLog" target="SYSTEM_OUT">
             <!--输出日志的格式-->
-            <PatternLayout charset="UTF-8"  pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%traceId|%thread|%logger:%line|%msg%n"/>
+            <PatternLayout charset="UTF-8"  pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%traceId|%thread|%logger:%line|%sdc%n"/>
         </console>
         <RollingRandomAccessFile name="infoLog"
                                  fileName="./logs/catlina.log"
                                  filePattern="./logs/%d{yyyy-MM-dd}-%i.log">
-            <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%traceId|%thread|%logger:%line|%msg%n"/>
+            <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}|%-5level|%traceId|%thread|%logger:%line|%sdc%n"/>
             <Policies>
                 <!-- 限制单个文件大小 -->
                 <SizeBasedTriggeringPolicy size="500 MB"/>

@@ -12,6 +12,11 @@
     <artifactId>common-log-base-jcl-logback</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>tca</groupId>
+            <artifactId>common-log-base</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <!-- logback默认集成了slf4j -->
         <dependency>
             <groupId>ch.qos.logback</groupId>

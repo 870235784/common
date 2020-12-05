@@ -51,4 +51,11 @@
             The purpose of the log4j-over-slf4j module is to redirect calls made to a log4j logger to SLF4J. 
             If SLF4J is bound withslf4j-log4j12.jar and log4j-over-slf4j.jar is also present on the class path, a Stack-
             OverflowError will inevitably occur immediately after the first invocation of an SLF4J or a log4j logger.]
-            
+--------
+
+#### logback配置文件
+[主配置文件参考](https://www.cnblogs.com/gavincoder/p/10091757.html)
+
+#### logback实现日志脱敏
+[日志脱敏参考](https://blog.csdn.net/fywfengyanwei/article/details/78484590) 
+          

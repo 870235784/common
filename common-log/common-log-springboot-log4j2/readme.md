@@ -24,9 +24,9 @@
 ******
 
 #### 4.不能同时引入common-log-springboot-log4j2 和 common-log-springboot-logback, 否则启动会报错 stackoverflow
-    1.参见: 
-        [简书](https://www.jianshu.com/p/191a95ad0b89)
-        [slf4j官网](http://www.slf4j.org/codes.html#multiple_bindings)
+    1.参见
+        [简书] (https://www.jianshu.com/p/191a95ad0b89)
+        [slf4j官网] (http://www.slf4j.org/codes.html#multiple_bindings)
     2.slf4j多绑定问题
         SLF4J: Found binding in [jar:file:/E:/java_install/apache-maven-repository/org/apache/logging/log4j/log4j-slf4j-impl/2.11.2/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
         SLF4J: Found binding in [jar:file:/E:/java_install/apache-maven-repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
@@ -62,5 +62,12 @@
             The purpose of the log4j-over-slf4j module is to redirect calls made to a log4j logger to SLF4J. 
             If SLF4J is bound withslf4j-log4j12.jar and log4j-over-slf4j.jar is also present on the class path, a Stack-
             OverflowError will inevitably occur immediately after the first invocation of an SLF4J or a log4j logger.]
+******
          
+#### 5.log4j2.xml主配置文件
+[主配置文件参考](https://blog.csdn.net/zheng0518/article/details/69558893?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.not_use_machine_learn_pai)
+******
+
+#### 6.log4j2 convert
+[log4j convert](https://blog.csdn.net/lqzkcx3/article/details/82082274)   
                        
