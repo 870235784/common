@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>common-log-base-jcl-logback</artifactId>
+    <version>1.0.0</version>
 
     <dependencies>
         <dependency>

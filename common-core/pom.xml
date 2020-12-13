@@ -9,19 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common-log-springboot-log4j2</artifactId>
+    <artifactId>common-core</artifactId>
     <version>1.0.0</version>
 
     <dependencies>
         <dependency>
             <groupId>tca</groupId>
-            <artifactId>common-log-base</artifactId>
+            <artifactId>common-utils</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency>
+
     </dependencies>
 
 
