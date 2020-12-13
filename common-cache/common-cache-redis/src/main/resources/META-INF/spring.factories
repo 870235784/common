@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.tca.common.cache.redis.properties.RedisProperties,\
+  com.tca.common.cache.redis.bean.CacheHelper,\
+  com.tca.common.cache.redis.config.RedissonConfiguration

@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @Date 2020/11/23
  */
 @SpringBootApplication
-@ComponentScan("com.tca")
 public class CacheTestApplication {
 
     public static void main(String[] args) {
