@@ -1,7 +1,8 @@
 package com.tca.common.core.bean;
 
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tca.common.core.enums.CommonResultEnum;
 import lombok.Data;
 
@@ -91,14 +92,18 @@ public class Result<T> implements Serializable {
     /**
      * 判断是否成功
      * @return
+     *
+     * 必须加上 @JSONField(serialize = false) @JsonIgnore
+     * fastjson和jackson在序列化对象时, 默认会解析getXxx 和isXxx 方法
+     * 使用 @JSONField(serialize = false) , fastjson解析时忽略该属性
+     * 使用 @JsonIgnore, jackson在序列化对象时会忽略该属性
+     * 对于非属性字段, 不建议使用 isXxx 和 getXxx 方法
      */
+    @JSONField(serialize = false)
+    @JsonIgnore
     public boolean isSuccess(){
         return CommonResultEnum.SUCCESS.getCode().equals(this.code);
     }
 
 
-    @Override
-    public String toString() {
-        return JSONObject.toJSONString(this);
-    }
 }
