@@ -27,6 +27,7 @@
         <spring.version>5.1.10.RELEASE</spring.version>
         <!-- springboot -->
         <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
+        <spring-boot-redis.version>2.3.2.RELEASE</spring-boot-redis.version>
         <!-- springcloud -->
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
         <!-- springcloud alibaba -->
@@ -62,7 +63,8 @@
         <!-- log4j2 增强 -->
         <disruptor.version>3.3.2</disruptor.version>
         <!-- redisson -->
-        <redisson.version>3.14.0</redisson.version>
+        <!--<redisson.version>3.14.0</redisson.version>-->
+        <redisson.version>3.10.6</redisson.version>
         <!-- google protobuf -->
         <protobuf.version>3.7.0</protobuf.version>
 
@@ -89,6 +91,12 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- springboot-redis整合 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot-redis.version}</version>
             </dependency>
             <!-- spring cloud -->
             <dependency>

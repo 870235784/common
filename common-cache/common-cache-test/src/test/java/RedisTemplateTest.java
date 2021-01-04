@@ -22,9 +22,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class RedisTemplateTest {
 
     @Autowired
-    private CacheHelper cacheHelper;
-
-    @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
     @Autowired

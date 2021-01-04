@@ -13,6 +13,7 @@
     <version>1.0.0</version>
 
     <dependencies>
+
         <dependency>
             <groupId>tca</groupId>
             <artifactId>common-cache-redis</artifactId>
@@ -40,4 +41,5 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
+
 </project>

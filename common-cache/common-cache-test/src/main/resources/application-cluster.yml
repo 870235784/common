@@ -3,8 +3,16 @@ spring:
   redis:
     mode: cluster
     cluster:
-      nodes: 172.16.19.26:6379
-      password: ai123456
+      nodes:
+        - 192.168.1.102:7001
+        - 192.168.1.102:7002
+        - 192.168.1.102:7003
+        - 192.168.1.102:7004
+        - 192.168.1.102:7005
+        - 192.168.1.102:7006
+      max-redirects: 3
+
+#      password: ai123456
       scan-interval: 1000
       read-mode: SLAVE
       retry-attempts: 3
@@ -12,4 +20,3 @@ spring:
       slave-connection-pool-size: 64
       master-connection-pool-size: 64
       retry-interval: 2000
-

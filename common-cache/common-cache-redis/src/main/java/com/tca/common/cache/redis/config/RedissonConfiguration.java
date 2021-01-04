@@ -28,7 +28,7 @@ public class RedissonConfiguration {
 
     @Configuration
     @ConditionalOnClass({Redisson.class})
-    public class RedissonSingleClientConfiguration {
+    public class RedissonClientConfiguration {
 
         /**
          * 单机模式
@@ -66,7 +66,7 @@ public class RedissonConfiguration {
                     node.startsWith("redis://") ? node : "redis://" + node));
 
             ClusterServersConfig serverConfig = config.useClusterServers()
-                    .addNodeAddress(newNodes.toArray(new String[0]))
+                    .addNodeAddress(newNodes.toArray(new String[newNodes.size()]))
                     .setScanInterval(
                             redisProperties.getCluster().getScanInterval())
                     .setIdleConnectionTimeout(
@@ -105,12 +105,11 @@ public class RedissonConfiguration {
                     node.startsWith("redis://") ? node : "redis://" + node));
 
             SentinelServersConfig serverConfig = config.useSentinelServers()
-                    .addSentinelAddress(newNodes.toArray(new String[0]))
+                    .addSentinelAddress(newNodes.toArray(new String[newNodes.size()]))
+//                    .setCheckSentinelsList(false)
                     .setMasterName(redisProperties.getSentinel().getMaster())
                     .setReadMode(ReadMode.SLAVE)
-                    .setTimeout(redisProperties.getTimeout())
-                    .setMasterConnectionPoolSize(redisProperties.getLettuce().getPool().getSize())
-                    .setSlaveConnectionPoolSize(redisProperties.getLettuce().getPool().getSize());
+                    .setTimeout(redisProperties.getTimeout());
 
             if (StringUtils.isNotBlank(redisProperties.getPassword())) {
                 serverConfig.setPassword(redisProperties.getPassword());

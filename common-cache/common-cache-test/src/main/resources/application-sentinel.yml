@@ -3,8 +3,8 @@ spring:
   redis:
     mode: sentinel
     sentinel:
-      master: master
-      nodes: 172.16.19.26:6379
-      password: ai123456
+      master: mymaster
+      nodes: 192.168.1.102:26379, 192.168.1.102:26380, 192.168.1.102:26381
+#      password: ai123456
       master-onlyWrite: true
       fail-max: 3
