@@ -12,3 +12,5 @@
     
 #### 4.RedisTemplate StringRedisTemplate 比较 
 [RedisTemplate与StringRedisTemplate比较](https://blog.csdn.net/notsaltedfish/article/details/75948281)
+
+#### 5.一定不要修改redisson和spring-boot-starter-data-redis的版本号!!!
