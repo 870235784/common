@@ -35,8 +35,8 @@ public class RedissonConfiguration {
          * @return
          */
         @Bean
-        @ConditionalOnProperty(name = "spring.redis.mode", havingValue = "single", matchIfMissing = true)
-        RedissonClient redissonSingle() {
+        @ConditionalOnProperty(name = "spring.redis.mode", havingValue = "standalone", matchIfMissing = true)
+        RedissonClient redissonStandalone() {
             Config config = new Config();
             String node = redisProperties.getHost() + ":" + redisProperties.getPort();
             node = node.startsWith("redis://") ? node : "redis://" + node;

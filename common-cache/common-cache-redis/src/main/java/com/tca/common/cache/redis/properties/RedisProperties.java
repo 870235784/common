@@ -1,7 +1,6 @@
 package com.tca.common.cache.redis.properties;
 
 import com.tca.common.cache.redis.enums.RedisModeEnum;
-import com.tca.common.utils.ValidateUtils;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.config.ReadMode;
@@ -33,7 +32,7 @@ public class RedisProperties {
 
     private Integer timeout = 3000;
 
-    private String mode = RedisModeEnum.SINGLE.getMode();
+    private String mode = RedisModeEnum.STANDALONE.getMode();
 
     private Lettuce lettuce = new Lettuce();
 

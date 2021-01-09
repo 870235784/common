@@ -13,7 +13,7 @@ public enum RedisModeEnum {
     /**
      * 单机模式
      */
-    SINGLE("single"),
+    STANDALONE("standalone"),
 
     /**
      * 集群模式
