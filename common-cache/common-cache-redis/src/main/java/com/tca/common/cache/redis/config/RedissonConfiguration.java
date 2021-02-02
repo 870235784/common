@@ -42,6 +42,7 @@ public class RedissonConfiguration {
             node = node.startsWith("redis://") ? node : "redis://" + node;
             SingleServerConfig serverConfig = config.useSingleServer()
                     .setAddress(node)
+                    .setDatabase(redisProperties.getDatabase())
                     .setTimeout(redisProperties.getTimeout())
                     .setConnectionPoolSize(redisProperties.getLettuce().getPool().getSize())
                     .setConnectionMinimumIdleSize(redisProperties.getLettuce().getPool().getMinIdle());
@@ -106,7 +107,6 @@ public class RedissonConfiguration {
 
             SentinelServersConfig serverConfig = config.useSentinelServers()
                     .addSentinelAddress(newNodes.toArray(new String[newNodes.size()]))
-//                    .setCheckSentinelsList(false)
                     .setMasterName(redisProperties.getSentinel().getMaster())
                     .setReadMode(ReadMode.SLAVE)
                     .setTimeout(redisProperties.getTimeout());
