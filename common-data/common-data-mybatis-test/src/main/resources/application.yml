@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_test?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: admin
+
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    com.baomidou.mybatisplus: ERROR
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jLoggerImpl
+

@@ -2,23 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>common-parent</artifactId>
+        <groupId>tca</groupId>
+        <version>1.0.0</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>tca</groupId>
-    <artifactId>common</artifactId>
-    <version>1.0.0</version>
-    <description>聚合common</description>
-
-    <modules>
-        <module>common-parent</module>
-        <module>common-cache</module>
-        <module>common-utils</module>
-        <module>common-log</module>
-        <module>common-core</module>
-        <module>common-data</module>
-    </modules>
-
+    <artifactId>common-data</artifactId>
     <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <modules>
+        <module>common-data-mybatis</module>
+        <module>common-data-mybatis-test</module>
+    </modules>
 
 
 </project>
