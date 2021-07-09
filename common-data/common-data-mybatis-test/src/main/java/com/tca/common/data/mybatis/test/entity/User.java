@@ -1,5 +1,7 @@
 package com.tca.common.data.mybatis.test.entity;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -37,7 +39,13 @@ public class User implements Serializable {
      *
      * 乐观锁
      */
+    @Version
     private Integer version;
+    /**
+     * 逻辑删除
+     */
+    @TableLogic
+    private Integer deleteFlag;
 
 
 }

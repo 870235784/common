@@ -1,4 +1,6 @@
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tca.common.data.mybatis.test.MybatisTestApplication;
 import com.tca.common.data.mybatis.test.entity.User;
 import com.tca.common.data.mybatis.test.mapper.UserMapper;
@@ -21,6 +23,9 @@ public class MyBatisPlusTest {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * 测试入库
+     */
     @Test
     public void testInsert() {
         User user = new User();
@@ -30,6 +35,9 @@ public class MyBatisPlusTest {
         userMapper.insert(user);
     }
 
+    /**
+     * 测试删除
+     */
     @Test
     public void testDelete() {
         QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
@@ -37,4 +45,26 @@ public class MyBatisPlusTest {
         userMapper.delete(userQueryWrapper);
     }
 
+    /**
+     * 测试乐观锁插件
+     */
+    @Test
+    public void testOptimisticLockerInterceptor() {
+        User user = userMapper.selectById(2);
+        user.setEmail("optimisticLocker@qq.com");
+        userMapper.updateById(user);
+    }
+
+    /**
+     * 测试分页插件
+     */
+    @Test
+    public void testPage() {
+        Page<User> page = new Page<>();
+        page.setCurrent(0);
+        page.setSize(5);
+        IPage<User> pageResult = userMapper.selectPage(page, null);
+        log.info("查询结果: total = {}, current = {}, size = {}", pageResult.getTotal(), pageResult.getCurrent(), pageResult.getSize());
+        log.info("查询详情: {}", pageResult.getRecords());
+    }
 }
