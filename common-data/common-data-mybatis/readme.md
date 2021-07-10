@@ -42,3 +42,8 @@ https://mp.baomidou.com/guide/auto-fill-metainfo.html
 ```
 #### 使用场景
 1.自动填充 create_time 和 update_time
+
+## 6.待完善
+#### mybatis源码、自定义插件实现
+#### mybatis-plus 租户实现
+#### code-generator 代码生成器 
