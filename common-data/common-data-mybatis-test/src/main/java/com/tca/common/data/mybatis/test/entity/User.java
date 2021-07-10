@@ -1,10 +1,14 @@
 package com.tca.common.data.mybatis.test.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.sql.Time;
+import java.util.Date;
 
 /**
  * <p>
@@ -46,6 +50,14 @@ public class User implements Serializable {
      */
     @TableLogic
     private Integer deleteFlag;
-
-
+    /**
+     * 创建时间
+     */
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
+    /**
+     * 更新时间
+     */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Date updateTime;
 }

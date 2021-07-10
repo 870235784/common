@@ -8,6 +8,10 @@
         <result column="name" property="name" />
         <result column="age" property="age" />
         <result column="email" property="email" />
+        <result column="version" property="version"/>
+        <result column="delete_flag" property="deleteFlag"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
     </resultMap>
 
 </mapper>

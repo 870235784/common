@@ -35,3 +35,10 @@ https://mp.baomidou.com/guide/page.html
 ```
 https://mp.baomidou.com/guide/logic-delete.html
 ```
+
+## 5.自动填充
+```
+https://mp.baomidou.com/guide/auto-fill-metainfo.html
+```
+#### 使用场景
+1.自动填充 create_time 和 update_time

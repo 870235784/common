@@ -50,7 +50,9 @@ public class MyBatisPlusTest {
      */
     @Test
     public void testOptimisticLockerInterceptor() {
-        User user = userMapper.selectById(2);
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.eq("name", "CR7");
+        User user = userMapper.selectOne(userQueryWrapper);
         user.setEmail("optimisticLocker@qq.com");
         userMapper.updateById(user);
     }
