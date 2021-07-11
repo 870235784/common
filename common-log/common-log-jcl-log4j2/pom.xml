@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common-log-base-jcl-logback</artifactId>
+    <artifactId>common-log-jcl-log4j2</artifactId>
     <version>1.0.0</version>
 
     <dependencies>
@@ -18,14 +18,24 @@
             <artifactId>common-log-base</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!-- logback默认集成了slf4j -->
+        <!-- log4j2 -->
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+        <!-- log4j2日志增强 -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+        </dependency>
+        <!-- jcl-log4j2桥接 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
         </dependency>
     </dependencies>
 </project>
