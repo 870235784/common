@@ -68,8 +68,10 @@
         <!-- google protobuf -->
         <protobuf.version>3.7.0</protobuf.version>
 
-        <!-- 待用 -->
-        <sharding-sphere.version>4.0.0-RC3</sharding-sphere.version>
+        <!-- sharding-sphere 4.0.0-RC3有bug
+            参考: https://github.com/apache/shardingsphere/issues/3582
+        -->
+        <sharding-sphere.version>4.1.1</sharding-sphere.version>
         <!--<swagger.fox.version>2.9.2</swagger.fox.version>
         <knife4j.version>2.0.2</knife4j.version>
         <swagger.version>1.5.21</swagger.version>
