@@ -6,7 +6,6 @@
         <artifactId>common-parent</artifactId>
         <groupId>tca</groupId>
         <version>1.0.0</version>
-        <relativePath>../../common-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
